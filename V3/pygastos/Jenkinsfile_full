@@ -1,0 +1,71 @@
+pipeline {
+    agent any
+    // triggers {
+    //     gitlab(triggerOnPush: true, triggerOnMergeRequest: false)
+    // }
+    stages {
+        stage('Info') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "INFORMATION"
+                echo "***********************************************************************************************"
+                echo "The build ID of the job is ${BUILD_ID}."
+                echo "The build URL of the job is ${BUILD_URL}."
+            }
+        }
+        // stage('CleanUp') {
+        //     steps {
+        //         echo "***********************************************************************************************"
+        //         echo "CLEAN WORKSPACE"
+        //         echo "***********************************************************************************************"
+        //         cleanWs()  // Limpiar el workspace
+        //     }
+        // }
+        stage('Checkout') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "CHECKOUT"
+                echo "***********************************************************************************************"
+                git branch: 'develop',
+                    credentialsId: 'gitlab-creds',
+                    url: 'https://gitlab.com/descolbeats/pygastos.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "BUILD"
+                echo "***********************************************************************************************"
+                sh 'chmod +x scripts/jenkins_build.sh'  // Asegúrate de que el archivo sea ejecutable
+                sh 'scripts/jenkins_build.sh'           // Ejecuta el script
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "TESTS"
+                echo "***********************************************************************************************"
+                sh 'chmod +x scripts/jenkins_test.sh'
+                sh 'scripts/jenkins_test.sh'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "DELIVER - sqlite_web"
+                echo "***********************************************************************************************"
+                sh 'chmod +x scripts/jenkins_deliver.sh'
+                sh 'scripts/jenkins_deliver.sh'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "***********************************************************************************************"
+                echo "DEPLOY - Flask app"
+                echo "***********************************************************************************************"
+                sh 'chmod +x scripts/jenkins_deploy.sh'
+                sh 'scripts/jenkins_deploy.sh'
+            }
+        }
+    }
+}

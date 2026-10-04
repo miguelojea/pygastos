@@ -1,0 +1,80 @@
+{
+  "folders": [
+    {
+      "name": "PyGastosLite",
+      "path": "../"
+    }
+  ],
+  "settings": {
+    // Allow comments in all JSON files.
+    "files.associations": {
+      "*.code-workspace": "jsonc",
+      "*.json": "jsonc"
+    },
+    // Configure Flake8 extension.
+    "flake8.args": [
+        "--max-line-length=120",
+        "--ignore=E402,W503"
+    ],
+    // Enable Pylance linter
+    "python.analysis.typeCheckingMode": "basic",
+    // Show all spaces.
+    "editor.renderWhitespace": "all",
+    // Print vertical ruler & char 120
+    "editor.rulers": [120],
+    // Set Python interpreter to the virtual environment
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+  },
+  "extensions": {
+      "recommendations": [
+          "ms-python.python",  // Python
+          "ms-python.flake8",  // Flake8
+          "njpwerner.autodocstring",  // Python Docstring Generator
+          "wayou.vscode-todo-highlight"  // TODO Highlight
+      ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Flask App",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/main.py",
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "console": "integratedTerminal",
+        "justMyCode": true,  // Do not debug extern libraries like Flask
+        "env": {
+          "FLASK_ENV": "development"  // Interactive browser debugger, auto reload after changes and app.debug=True
+        },
+        "preLaunchTask": "setup-env"
+      },
+      {
+        "name": "Run Flask App",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/main.py",
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "console": "integratedTerminal",
+        "env": {
+          "FLASK_ENV": "production"
+        },
+        "preLaunchTask": "setup-env"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "setup-env",
+        "type": "shell",
+        "command": "${workspaceFolder}/scripts/setup_env_windows.bat",
+        "problemMatcher": [],
+        "windows": {
+          "command": "${workspaceFolder}/scripts/setup_env_windows.bat"
+        }
+      }
+    ]
+  }
+}

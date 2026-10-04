@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h2>Añadir nueva entrada</h2>
+<div class="content">
+    <form method="POST" action="{{ url_for('add') }}">
+        <!-- <p><label>Concepto: </label><input type="text" name="concept" placeholder="CTAG" required></p> -->
+        <p>
+            <label>Concepto: </label>
+            <select name="concept" required>
+                {% for concept in concepts %}
+                    <option value="{{ concept }}">{{ concept }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p><label>Valor: </label><input type="text" name="value" placeholder="12,34" required></p>
+        <p><label>Descripción: </label><input type="text" name="description"></p>
+        <!-- TODO: add date field. Current date by default -->
+        <p></p><input type="submit" value="Añadir"></p>
+    </form>
+
+</div>
+{% endblock %}

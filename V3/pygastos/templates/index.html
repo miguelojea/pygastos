@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepy</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/png", href="static/favicon.png">
+
+</head>
+<body>
+    <header>
+        <h1>SleePy</h1>
+        <div id="sections">
+            <nav>
+                <button class="main-button" data-section="home-section">Inicio</button>
+                <button class="main-button" data-section="add-entry-section">Añadir entrada</button>
+                <button class="main-button" data-section="to-do">TODO:</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="home-section">
+            <h2>Inicio</h2>
+            <nav>
+                <button id="refresh-home-button" class="auxiliar-button" title="Refrescar">
+                    <img src="static/images/refresh.png" alt="Refrescar" />
+                </button>
+            </nav>
+            <details open>
+                <summary>Información</summary>
+                <p>TODO:</p>
+                <p>TODO:</p>
+            </details>
+        </section>
+
+        <section id="add-entry-section" class="active">
+            <h2>Añadir entrada</h2>
+            <form id="add-entry-form">
+                <label for="concept">Tu nombre:</label>
+                <select id="concept" name="concept" form="add-entry-form">
+                  <option value="ctag">CTAG</option>
+                  <option value="gas">Gasolina</option>
+                  <option value="unexpected">Imprevistos</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="response"></div>
+        </section>
+
+        <section id="logs-section">
+            <h2>Logs</h2>
+            <nav>
+                <button id="delete-logs-button" class="auxiliar-button" title="Eliminar logs (excepto el último)">
+                    <img src="static/images/bin3.png" alt="Eliminar logs (excepto el último)" />
+                </button>
+            </nav>
+            <div id="logs-container"></div>
+        </section>
+
+        <!-- <section id="tests-section">
+            <h2>Pruebas</h2>
+            <div id="response3"></div>
+        </section> -->
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
+
+<!--
+
+TODO: Subsecciones en sección de audios:
+- Audios agrupados (de 3 minutos)
+- Audios procesados (individuales)
+- Raw audios (de 1 minuto sin procesar)
+- Botón de eliminar todos los audios, pedir confirmación?.
+Para cada audio:
+- Botón de descargar
+- Botón de eliminar
+- Botón de añadir a favoritos.
+
+
+-->
+

@@ -1,0 +1,8 @@
+git restore start_gunicorn.sh
+chmod +x start_gunicorn.sh
+source scripts/setup_env_linux_source.sh
+
+./start_gunicorn.sh
+nohup ./start_gunicorn.sh > gunicorn.log 2>&1 &
+
+sudo service nginx restart

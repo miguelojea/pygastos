@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h2>Añadir nueva entrada</h2>
+<div class="content">
+        {% for wb_name, concepts in wb_concepts.items() %}
+            <h3>{{ wb_name }}</h3>
+            <form method="POST" action="{{ url_for('main.add_entry') }}">
+                <!-- Hidden input to detect the wb. Better than add name and value to the submit,
+                 as it won't be detected if Enter is pressed instead of pressing the button -->
+                <input type="hidden" name="wb_name" value="{{ wb_name }}">
+                <p>
+                    <label>Concepto: </label>
+                    <select name="concept" required>
+                        {% for concept in concepts %}
+                            <option value="{{ concept }}">{{ concept }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+                <p><label>Valor: </label><input type="text" name="value" placeholder="12,34" required></p>
+                <p><label>Descripción: </label><input type="text" name="description"></p>
+                <p><label>Fecha: </label>
+                    <input type="date" name="date" value="{{ today }}" required>
+                </p>
+                <p></p><input type="submit" value="Add"></p>
+            </form>
+        {% endfor %}
+</div>
+{% endblock %}

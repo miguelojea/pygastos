@@ -1,0 +1,222 @@
+{
+    "miguel":{
+        "url": "https://docs.google.com/spreadsheets/d/1LM3SOzm4SceINrZ0Dz9yAr3CnXDuUOAgR9lO_7tAn20/edit?gid=281689221#gid=281689221",
+        "id": "1LM3SOzm4SceINrZ0Dz9yAr3CnXDuUOAgR9lO_7tAn20",
+        "concepts": [
+            {
+                "name": "CTAG",
+                "income": true
+            },
+            {
+                "name": "Mesas",
+                "income": true
+            },
+            {
+                "name": "Ocio",
+                "income": false
+            },
+            {
+                "name": "Comunes",
+                "income": false
+            },
+            {
+                "name": "Gasolina",
+                "income": false
+            },
+            {
+                "name": "I. general",
+                "income": true
+            },
+            {
+                "name": "G. general",
+                "income": false
+            },
+            {
+                "name": "Viaje",
+                "income": false
+            },
+            {
+                "name": "Gym",
+                "income": false
+            },
+            {
+                "name": "Regalos",
+                "income": false
+            },
+            {
+                "name": "Juegos",
+                "income": false
+            },
+            {
+                "name": "Imprevistos",
+                "income": false
+            },
+            {
+                "name": "Formación",
+                "income": false
+            },
+            {
+                "name": "Desconocido",
+                "income": false
+            }
+        ],
+        "special_concept": "Ocio",
+        "csv":{
+            "cc":{
+                "CTAG": [
+                    "FUND. PROM. AUTOM. GALICIA"
+                ],
+                "Comunes": [
+                    "MIGUEL"
+                ],
+                "Ignore":[
+                    "AMORTIZACION DEUDA",
+                    "TRANSFERENCIA MENSUAL MEDIOLANUM"
+                ]
+            },
+            "card":{
+                "Ocio": [
+                    "VIPS SMART",
+                    "LA MAFIA",
+                    "GELATERIA",
+                    "CHURRASQUEIRA",
+                    "BICO DE XEADO",
+                    "NERO",
+                    "VAN COGH",
+                    "ALDEANA",
+                    "La Urbana Vigo",
+                    "BAGATELA",
+                    "ICEWOLF VIGO",
+                    "TAPERIA",
+                    "DISCOTECA",
+                    "A TAPA DO BARRIL",
+                    "PAZO LOS ESCUDOS",
+                    "ROSA LIA",
+                    "YELMOFILMSWEB",
+                    "MESON ARGENTINO",
+                    "VIGO CHURROS",
+                    "CACTUS COFFEE",
+                    "PANNA FRAGOLA",
+                    "TAGLIATELLA",
+                    "SUSHI"
+                ],
+                "Gasolina": [
+                    "PETROPRIX"
+                ],
+                "Juegos": [
+                    "STEAMGAMES.COM",
+                    "STEAM PURCHASE"
+                ],
+                "Ignore":[
+                    "AMORTIZACION DEUDA"
+                ]
+            }
+        }
+    },
+    "comunes":{
+        "url": "https://docs.google.com/spreadsheets/d/11VstjTMeSLNZ5xHcV67liO4xCYa-tq1E3ZeLpAT1RPU/edit?gid=281689221#gid=281689221",
+        "id": "11VstjTMeSLNZ5xHcV67liO4xCYa-tq1E3ZeLpAT1RPU",
+        "concepts": [
+            {
+                "name": "Transferencia",
+                "income": true
+            },
+            {
+                "name": "Garaje",
+                "income": true
+            },
+            {
+                "name": "Alquiler",
+                "income": false
+            },
+            {
+                "name": "Electricidad",
+                "income": false
+            },
+            {
+                "name": "Agua",
+                "income": false
+            },
+            {
+                "name": "Gas",
+                "income": false
+            },
+            {
+                "name": "Internet",
+                "income": false
+            },
+            {
+                "name": "Super",
+                "income": false
+            },
+            {
+                "name": "Casa",
+                "income": false
+            },
+            {
+                "name": "Imprevistos",
+                "income": false
+            },
+            {
+                "name": "I. general",
+                "income": true
+            },
+            {
+                "name": "G. general",
+                "income": false
+            },
+            {
+                "name": "Comidas",
+                "income": false
+            },
+            {
+                "name": "Viaje",
+                "income": false
+            },
+            {
+                "name": "Desconocido",
+                "income": false
+            }
+        ],
+        "special_concept": "Super",
+        "csv":{
+            "cc":{
+                "Transferencia": [
+                    "LOBOSAR MATANZAS MILENA",
+                    "MIGUEL"
+                ],
+                "Alquiler": [
+                    "MIGUEL"
+                ],
+                "Electricidad": [
+                    "NATURGY CLIENTES, S.A."
+                ],
+                "Agua": [
+                    "FCC-Aqualia Vigo U.T.E."
+                ],
+                "Gas": [
+                    "C.P. TOMAS ALONSO 12"
+                ],
+                "Internet": [
+                    "FINETWORK"
+                ],
+                "Super": [
+                    "DIA RETAIL",
+                    "LIDL",
+                    "FROIZ",
+                    "MERCADONA",
+                    "ALCAMPO",
+                    "CARREFOUR",
+                    "GADIS",
+                    "EROSKI",
+                    "GANDARA ARTESANOS",
+                    "ALIMENTACION LOPEZ"
+                ],
+                "G. general": [
+                    "DAVID GOMEZ",
+                    "Netflix.com"
+                ]
+            }
+        }
+    } // TODO: viajes workbook.
+}

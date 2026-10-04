@@ -1,0 +1,64 @@
+{
+    "miguel":{
+        // dev: "url": "https://docs.google.com/spreadsheets/d/1AI_f9J6vV0sYp65XkeKzFYMdsZYzB0jCaLKatTbzKJE/edit?gid=768902382#gid=768902382",
+        // dev: "id": "1AI_f9J6vV0sYp65XkeKzFYMdsZYzB0jCaLKatTbzKJE",
+        "url": "https://docs.google.com/spreadsheets/d/1LM3SOzm4SceINrZ0Dz9yAr3CnXDuUOAgR9lO_7tAn20/edit?gid=768902382#gid=768902382",
+        "id": "1LM3SOzm4SceINrZ0Dz9yAr3CnXDuUOAgR9lO_7tAn20",
+        "concepts": [
+            {
+                "name": "CTAG",
+                "income": true
+            },
+            {
+                "name": "Mesas",
+                "income": true
+            },
+            {
+                "name": "Ocio",
+                "income": false
+            },
+            {
+                "name": "Comunes",
+                "income": false
+            },
+            {
+                "name": "Gasolina",
+                "income": false
+            },
+            {
+                "name": "I. general",
+                "income": false
+            },
+            {
+                "name": "G. general",
+                "income": false
+            },
+            {
+                "name": "Viaje",
+                "income": false
+            },
+            {
+                "name": "Gym",
+                "income": false
+            },
+            {
+                "name": "Regalos",
+                "income": false
+            },
+            {
+                "name": "Juegos",
+                "income": false
+            },
+            {
+                "name": "Imprevistos",
+                "income": false
+            },
+            {
+                "name": "Formación",
+                "income": false
+            }
+        ],
+        "special_conecpt": "Ocio"
+    }
+
+}

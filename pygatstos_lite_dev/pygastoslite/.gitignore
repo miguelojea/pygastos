@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+private/
+logs/
+gunicorn.pid
+instance/
+backups/

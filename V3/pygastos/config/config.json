@@ -1,0 +1,82 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "sql_type": "INTEGER",
+            "not_null": true,
+            "primary_key": true,
+            "autoincrement": true
+        },
+        {
+            "name": "concept",
+            "sql_type": "TEXT",
+            "not_null": true,
+            "primary_key": false,
+            "autoincrement": false
+        },
+        {
+            "name": "subconcept",
+            "sql_type": "TEXT",
+            "not_null": false,
+            "primary_key": false,
+            "autoincrement": false
+        },
+        {
+            "name": "income",
+            "sql_type": "BOOL",
+            "not_null": true,
+            "primary_key": false,
+            "autoincrement": false
+        },
+        {
+            "name": "value",
+            "sql_type": "DECIMAL(8, 2)",
+            "not_null": true,
+            "primary_key": false,
+            "autoincrement": false
+        },
+        {
+            "name": "date",
+            "sql_type": "DATE",
+            "not_null": true,
+            "primary_key": false,
+            "autoincrement": false
+        },
+        {
+            "name": "description",
+            "sql_type": "TEXT",
+            "not_null": false,
+            "primary_key": false,
+            "autoincrement": false
+        }
+    ],
+    "tables":{
+        "personal": {
+            "concepts": [
+                {"name": "CTAG", "income": true, "active": true},
+                {"name": "Mesas", "income": true, "active": false},
+                {"name": "Ocio", "income": false, "active": true},
+                {"name": "Comunes", "income": false, "active": true},
+                {"name": "Gasolina", "income": false, "active": true},
+                {"name": "Viaje", "income": false, "active": true},
+                {"name": "Gym", "income": false, "active": true},
+                {"name": "Regalos", "income": false, "active": true},
+                {"name": "Juegos", "income": false, "active": true},
+                {"name": "Imprevistos", "income": false, "active": true},
+                {"name": "Formación", "income": false, "active": true},
+                {"name": "I_otros", "income": true, "active": true},
+                {"name": "G_otros", "income": false, "active": true}
+            ],
+            "subconcepts": {
+                "viaje": [
+                    {"name": "Trayecto", "active": true},
+                    {"name": "Alojamiento", "active": true},
+                    {"name": "Comida", "active": true},
+                    {"name": "Turismo", "active": true},
+                    {"name": "Otros", "active": true}
+                ]
+            },
+            "google_sheets": "TODO:"
+        }
+    }
+}

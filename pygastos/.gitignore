@@ -1,0 +1,5 @@
+/env
+.env
+__pycache__
+src/config/credentials.json
+log_file.log

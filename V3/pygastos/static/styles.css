@@ -1,0 +1,429 @@
+/* **************************************************************************************/
+/* GENERAL ******************************************************************************/
+/* **************************************************************************************/
+
+/* Estilos para una interfaz oscura con colores */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+header {
+    background-color: #1e1e1e; /* Fondo del encabezado oscuro */
+    color: #ffffff; /* Texto claro */
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #333; /* Borde sutil */
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background: #1e1e1e; /* Fondo oscuro para el contenido principal */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    width: 90%;
+    max-width: 500px;
+}
+
+/* **************************************************************************************/
+/* BOTONES ******************************************************************************/
+/* **************************************************************************************/
+
+/* Centrar los botones */
+nav {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 10px; /* Separación entre botones */
+}
+
+/* Estilo a los botones del header */
+/* header nav { ... } */
+
+/* Estilo de los botones en el nav (main y subsection) */
+nav button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+}
+/* Efecto hover en los botones */
+nav button:hover {
+    background-color: #444; /* Efecto hover */
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+/* Botones activos */
+.active-button, nav button:active {
+    font-weight: bold;
+    border: 2px solid white; /* Borde más oscuro */
+}
+.active-button:hover {
+    transform: scale(1.05);
+}
+
+/* Main buttons */
+.main-button {
+    background-color: #007bff;
+    border: 2px solid #003f7f;
+}
+.main-button:hover {
+    font-weight: bold;
+    background-color: #0056b3;
+    transform: scale(1.05); /* Escala el botón */
+}
+.active-main-button, .active-main-button:active {
+    font-weight: bold;
+    background-color: #003f7f;
+    border: 2px solid #ffffff; /* Borde más oscuro */
+}
+.active-main-button:hover {
+    font-weight: bold;
+    background-color: #003f7f;
+    transform: scale(1.05);
+}
+
+/* Audio subsection buttons */
+.audio-subsection-button {
+    background-color: #7b00ff;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid #3f007f;
+    transition: transform 0.2s, background-color 0.3s;
+}
+.audio-subsection-button:hover {
+    font-weight: bold;
+    background-color: #5600b3;
+    transform: scale(1.05);
+}
+.active-subsection-button, .active-subsection-button:active {
+    font-weight: bold;
+    background-color: #3f007f;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+.active-subsection-button:hover {
+    font-weight: bold;
+    background-color: #3f007f;
+    transform: scale(1.05);
+}
+/* Diferenciar botones de subsecciones */
+/* .audio-subsection-button.raw_audios { ... } */
+/* .audio-subsection-button.raw_audios:hover { ... } */
+
+/* Auxiliar buttons (buttons with images) */
+.auxiliar-button {
+    height: 60px; /* Tamaño del botón */
+    width: 60px; /* Igual que la altura */
+    background-color: #eeeeee; /* Color de fondo del botón */
+    border: 2px solid black; /* Borde del botón */
+    display: inline-flex; /* Para que la imagen y el botón se alineen correctamente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+.auxiliar-button img {
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: 100%; /* Ajusta el tamaño de la imagen */
+}
+
+.auxiliar-button:hover {
+    font-weight: bold;
+    background-color: #bbbbbb; /* Color de fondo cuando se pasa el mouse por encima */
+    transform: scale(1.05); /* Efecto de escalado al pasar el cursor */
+}
+/*  0123456789abcdef*/
+.auxiliar-button:active {
+    font-weight: bold;
+    background-color: #888888;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+/* Audio buttons (buttons to delete audios or add to favorites) */
+/* Auxiliar buttons (buttons with images) */
+.delete-audio-button, .fav-audio-button {
+    transition: transform 0.2s, color 0.3s, background-color 0.3s;
+    /* padding: 10px; */
+    flex-shrink: 0; /* Evita que el botón cambie de tamaño */
+    height: 40px; /* Tamaño del botón */
+    width: 40px; /* Igual que la altura */
+    border-radius: 50%; /* Hace el botón circular */
+    display: flex; /* Asegura la alineación de contenido interno */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    background-color: #f0f0f0; /* Color de fondo del botón */
+    border: none; /* Quita cualquier borde */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.delete-audio-button img, .fav-audio-button img {
+    width: 120%; /* Ocupa todo el ancho del botón */
+    height: 120%; /* Ocupa toda la altura del botón */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+}
+
+/* Record buttons */
+.record-buttons {
+    /* padding: 8px 16px; */
+    /* Aumenta el tamaño general del botón */
+    /* font-size: 18px; */
+    font-size: 1.1rem;
+    /* Texto más grande */
+    background-color: #eeeeee; /* Color de fondo */
+    border: 2px solid black;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+.record-buttons:hover {
+    background-color: #bbbbbb; /* Cambio de color al pasar el mouse */
+    transform: scale(1.08); /* Ligero aumento al pasar el cursor */
+}
+
+.record-buttons:active {
+    background-color: #888888; /* Cambio de color al hacer clic */
+    border: 2px solid white; /* Cambio de color del borde */
+    transition: background-color 0.3s, transform 0.2s;
+}
+/* **************************************************************************************/
+/*  ******************************************************************************/
+/* **************************************************************************************/
+
+/* Estilos para los títulos */
+h1, h2, h3 {
+    color: #ffffff;
+    margin: 10px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra sutil para resaltar */
+}
+h1, h2{
+    text-align: center;
+}
+
+/* Estilo general para el elemento <audio> */
+audio {
+    height: 40px;
+    width: 100%;
+    border: none;             /* Sin borde en el elemento <audio> */
+    outline: none;            /* Eliminar contorno predeterminado */
+}
+
+.audio-item {
+    width: 100%;              /* Ajusta el ancho si es necesario */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between;
+    gap: 10px; /* Espacio entre el audio y el botón */
+}
+
+.audio-item span:first-child {
+    flex-grow: 1; /* El span que contiene el audio ocupa todo el espacio sobrante */
+}
+
+/* span {
+    display: inline-flex;
+    align-items: center;
+} */
+
+/* FORMULARIO */
+
+/* Estilos para formularios */
+
+/* Estilos generales para los inputs */
+form input, form select, form textarea {
+    width: 100%; /* Hace que todos los inputs ocupen el mismo ancho */
+    max-width: 300px; /* Fija un ancho máximo */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444; /* Borde oscuro */
+    border-radius: 4px;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: white; /* Texto claro */
+    caret-color: white; /* Hace que el cursor sea blanco */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño total */
+}
+
+/* Asegurar que los inputs sean del mismo tamaño */
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Hace que los divs contenedores sean uniformes */
+    max-width: 300px; /* Igual que los inputs */
+}
+
+/* Solución para que los inputs de tipo number no tengan distinto tamaño */
+input[type="number"] {
+    appearance: textfield; /* Evita diferencias en el estilo por defecto */
+}
+
+/* Elimina los botones de incremento/decremento en los inputs de tipo number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Mejorar la apariencia en focus */
+form input:focus, form select:focus, form textarea:focus {
+    border-color: white;
+    box-shadow: 0 0 5px white;
+}
+
+input::placeholder {
+    color: #bbbbbb;
+}
+
+/* TEMP ALERT */
+
+/* Estilo principal para la alerta temporal */
+.temp-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Estilo para el desvanecimiento */
+.temp-alert.fade-out {
+    opacity: 0;
+}
+
+/***************************************************/
+
+.log-content {
+    white-space: pre-wrap; /* Mantiene el formato del texto */
+    word-wrap: break-word; /* Permite que las líneas largas se ajusten */
+    /*background-color: #f4f4f4;  Color de fondo para el área del log */
+    padding: 10px; /* Espaciado dentro del área del log */
+    border: 1px solid #ccc; /* Borde para separar visualmente el contenido */
+    border-radius: 4px; /* Bordes redondeados */
+    font-family: monospace; /* Usa una fuente monoespaciada para mejor legibilidad */
+}
+
+.log-content {
+    white-space: pre-wrap; /* Mantiene el formato del texto */
+    word-wrap: break-word; /* Permite que las líneas largas se ajusten */
+    padding: 10px; /* Espaciado dentro del área del log */
+    border: 1px solid #ccc; /* Borde para separar visualmente el contenido */
+    border-radius: 4px; /* Bordes redondeados */
+    font-family: monospace; /* Usa una fuente monoespaciada para mejor legibilidad */
+    text-indent: 20px; /* Sangría en las líneas que se ajustan */
+}
+
+.log-content pre {
+    margin: 0;
+}
+
+/* ********************************************************************************************* */
+
+/* DETAILS (desplegables) */
+
+/* Estilos para elementos <details> */
+details {
+    margin-bottom: 1.5rem; /* Espacio entre detalles */
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+}
+
+/* Estilos para <summary> */
+summary {
+    font-size: 1.1rem;
+    cursor: pointer;
+    /* color: #6a1b9a; */
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+/* Personalización del icono desplegable */
+summary::marker {
+    /* Flecha gruesa hacia la derecha */
+    /* content: '\276F'; */
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+details[open] summary {
+    /* color: #6a1b9a; */
+    font-weight: bold;
+}
+
+/* details[open] summary::marker { ... } */
+
+/* Estilos para contenido dentro de <details> */
+details p {
+    margin: 0.5rem 0;
+    color: #bdbdbd;
+    /* font-size: 0.9rem; */
+}
+
+/* Indicar el inicio y final del contenido de <details> */
+details::before {
+    /* content: "Inicio del grupo"; */
+    display: block;
+    font-size: 0.85rem;
+    color: #757575;
+    margin-bottom: 0.5rem;
+}
+
+details::after {
+    /* content: "Fin del grupo"; */
+    display: block;
+    font-size: 0.85rem;
+    color: #757575;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+/* Transición para el contenido desplegable */
+details[open] > div {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ********************************************************************************************* */

@@ -1,0 +1,13 @@
+# Credenciales
+credentials.json
+
+# Secretos / configuración sensible
+.env
+.env/
+*.env
+secrets.json
+
+# Entornos virtuales
+env/
+.venv/
+venv/

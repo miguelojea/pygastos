@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Subir CSVs</h2>
+
+<form method="post" enctype="multipart/form-data">  <!-- Form to upload files -->
+    {% for wb in wb_names %}
+        <fieldset style="margin-bottom: 1rem; border: 1px solid #ccc; padding: 1rem;">
+            <legend>{{ wb }}</legend>
+
+            <label for="{{ wb }}_cc">CC:</label>
+            <input type="file" name="{{ wb }}_cc" id="{{ wb }}_cc" accept=".csv"><br><br>
+
+            <label for="{{ wb }}_card">Tarjeta:</label>
+            <input type="file" name="{{ wb }}_card" id="{{ wb }}_card" accept=".csv">
+        </fieldset>
+    {% endfor %}
+
+    <button type="submit">Subir CSVs</button>
+</form>
+{% endblock %}

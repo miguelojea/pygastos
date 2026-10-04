@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>pyGastos Lite</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='imgs/logo.png') }}" type="image/png">
+        {% block head %}{% endblock %} <!-- Jinja -->
+        <!-- Use head for things like <title>, <meta>, <link> to CSS and <script> -->
+    </head>
+    <body>
+        <h1>pyGastos Lite</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a> |
+            <a href="{{ url_for('add_entry') }}">Añadir entrada</a>
+        </nav>
+        <hr>
+        {% block body %}{% endblock %}
+    </body>
+</html>

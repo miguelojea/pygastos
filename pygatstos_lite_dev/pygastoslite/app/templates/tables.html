@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Tablas en la base de datos</h2>
+
+{# 🔹 Jerarquía wb_name → año → mes → tabla #}
+{% for wb_name, years in grouped.items() %}
+    <details>
+        <summary>Tabla {{ wb_name }}</summary>
+        {% for year, months in years.items() %}
+            <details style="margin-left:20px;">
+                <summary>Año {{ year }}</summary>
+                {% for month, rows in months.items() %}
+                    <details style="margin-left:40px;">
+                        <summary>Mes {{ month }}</summary>
+                        <table border="1" style="margin:10px 0; margin-left:60px;">
+                            <thead>
+                                <tr>
+                                    {% for col in columns %}
+                                        <th>{{ col }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in rows %}
+                                    <tr>
+                                        {% for value in row %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </details>
+                {% endfor %}
+            </details>
+        {% endfor %}
+    </details>
+{% endfor %}
+
+{# 🔹 Tabla completa al final #}
+<details>
+    <summary>Tabla completa</summary>
+    <table border="1" style="margin:10px 0;">
+        <thead>
+            <tr>
+                {% for col in table_data.complete.columns %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data.complete.rows %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</details>
+
+{% endblock %}

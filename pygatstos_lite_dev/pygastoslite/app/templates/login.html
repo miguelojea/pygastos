@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h2>Autenticación</h2>
+<h3>Introduce la contraseña</h3>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+<form method="post">
+    <input type="password" name="password" placeholder="Contraseña">
+    <input type="submit" value="Entrar">
+</form>
+{% endblock %}

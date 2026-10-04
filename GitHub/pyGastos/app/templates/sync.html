@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h2>Sincronización</h2>
+
+{% if thread_running %}
+    <p>⚙️ Sync en progreso desde hace {{ elapsed.seconds }} segundos.</p>
+{% else %}
+    {% if last_sync_time %}
+        <p>✅ Último sync: {{ last_sync_time.strftime("%Y-%m-%d %H:%M:%S") }}</p>
+    {% else %}
+        <p>Aún no se ha hecho ningún sync.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post">
+    <button type="submit" {% if thread_running %}disabled{% endif %}>
+        Iniciar Sync
+    </button>
+</form>
+{% endblock %}

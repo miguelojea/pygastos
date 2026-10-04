@@ -1,0 +1,30 @@
+{
+    "columns": {
+        "concept": "B",
+        "value": "D",
+        "description": "F",
+        "special_value": "P",
+        "special_description": "R"
+    },
+    "rows": {
+        "first": 4,
+        "last": 35
+    },
+    "sheet_names": [  // Same names as workboo sheets
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+    ],
+    "scopes": [
+        "https://www.googleapis.com/auth/spreadsheets"
+    ]
+}
